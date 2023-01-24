@@ -9,11 +9,11 @@ import os
 import warnings
 
 warnings.filterwarnings("ignore")
-workingDir = r'D:\Logs\_App\BankLogCleanerPy'
+workingDir = r'codesDir'
 os.chdir(workingDir)
 
 from funcs import *
-logsPath = r'D:\Logs\BlockingLogs'
+logsPath = r'logsDir'
 
 files = extractWantedFiles(logsPath)
 

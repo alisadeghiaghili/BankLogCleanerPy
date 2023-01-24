@@ -107,7 +107,7 @@ def writeUnresolvedBlocks(unresolved, path):
     unresolved.to_csv('/'.join([path, 'block2.txt']), index = None, header=None, sep = '\t', mode='a')
     
 def createEngine():
-    config = 'mssql+pyodbc://BankLogManagement:SJTu4T1QcsgiWbCI@172.16.2.29/Bank?driver=SQL+Server+Native+Client+11.0'
+    config = 'mssql+pyodbc://user:pass@server/db?driver=SQL+Server+Native+Client+11.0'
     return sa.create_engine(config)
 
 def setDBTypes(fileType):

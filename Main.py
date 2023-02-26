@@ -9,11 +9,11 @@ import os
 import warnings
 
 warnings.filterwarnings("ignore")
-workingDir = r'codesDir'
+workingDir = r'D:\Logs\_App\BankLogCleanerPy'
 os.chdir(workingDir)
 
 from funcs import *
-logsPath = r'logsDir'
+logsPath = r'D:\Logs\BlockingLogs'
 
 files = extractWantedFiles(logsPath)
 
@@ -41,6 +41,21 @@ if ("transferBlock.txt" in files) or ("unblock.txt" in files):
             unblock = data
         elif fileType == "unblockErrors":
             unblockErrors = data
+			
+    for file in files:
+        fileType = detectFileType(file)
+        if fileType == "block":
+            block = makeBlockCodeClean(block)
+        elif fileType == "blockErrors":
+            blockError = makeBlockCodeClean(blockError)
+        elif fileType == "transferBlock":
+            transferBlock = makeBlockCodeClean(transferBlock)
+        elif fileType == "transferBlockErrors":
+            transferBlockErrors = makeBlockCodeClean(transferBlockErrors)
+        elif fileType == "unblock":
+            unblock = makeBlockCodeClean(unblock)
+        elif fileType == "unblockErrors":
+            unblockErrors = makeBlockCodeClean(unblockErrors)
         
     block['EndedUpIn'] = ''
     

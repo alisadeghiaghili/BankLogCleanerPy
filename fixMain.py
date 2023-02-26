@@ -183,3 +183,5 @@ for file in files:
         del unblockErrorsSet
         del unblockErrorsDBset
         del unblockErrors
+        
+   engine.dispose()

@@ -103,3 +103,5 @@ if ("transferBlock.txt" in files) or ("unblock.txt" in files):
             fixColumnSize(unblock, fileType).to_sql(name = 'UnBlock', con = engine, schema = 'bankLog', if_exists='append', index = False, dtype = dbtypes)
         elif fileType == "unblockErrors":
             fixColumnSize(unblockErrors, fileType).to_sql(name = 'UnBlockErrors', con = engine, schema = 'bankLog', if_exists='append', index = False, dtype = dbtypes)
+
+    engine.dispose()

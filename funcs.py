@@ -61,6 +61,10 @@ def makeDataClean(data, fileType):
         data.ShebaNumber = data.ShebaNumber.str.replace('\\*', '', regex = True).str.strip()
     
     return data
+	
+def makeBlockCodeClean(data):
+    data.loc[:, 'BlockCode'] = data.loc[:, 'BlockCode'].str.replace('^.*?:','', regex = True).str.strip()
+    return data
         
 def enrichData(data, file, fileType):
     data['FileName'] = file
